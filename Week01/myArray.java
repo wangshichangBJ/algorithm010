@@ -3,7 +3,7 @@ import java.util.LinkedList;
 
 /**
  * @author ShiChang Wang
- * @description 自定义数组
+ * @description JDK1.8
  * @date 2020/6/10
  */
 public class myArray {
