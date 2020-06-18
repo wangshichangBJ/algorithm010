@@ -93,6 +93,17 @@ public class IsAnagram {
         return false;
     }
 
+    /**
+     * 利用ASCII码处理
+     * 符合条件的两个字符串，同一个字母在s字符出现的次数与在t字符串出现的次数必须相等
+     * 所有定义一个计数器，在遍历s字符串时，累加某个字母出现的次数；
+     * 遍历t字符串时，累减对应字母的出现次数；
+     * 可以减到0，就说明出现的次数相同
+     *
+     * @param s
+     * @param t
+     * @return
+     */
     public static Boolean isAnagramMethod3(String s, String t){
         if (s.length() != t.length()){
             return false;
@@ -108,7 +119,6 @@ public class IsAnagram {
             if (counter != 0){
                 return false;
             }
-
         }
         return true;
 
