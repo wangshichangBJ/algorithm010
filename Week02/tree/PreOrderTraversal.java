@@ -5,39 +5,38 @@ import java.util.List;
 
 /**
  * @author ShiChang Wang
- * @description 二叉树中序遍历 左子树->根节点->右子树
+ * @description 二叉树先序遍历:根节点->左节点树-右节点树
  * @date 2020/6/18
  */
-public class InOrderTraversal {
+public class PreOrderTraversal {
 
     public class TreeNode{
         int val;
         TreeNode left;
         TreeNode right;
-        public TreeNode(int val, TreeNode left, TreeNode right) {
+        TreeNode(int val, TreeNode left, TreeNode right){
             this.val = val;
             this.left = left;
             this.right = right;
         }
     }
 
-    public List<Integer> inOrderTraversal(TreeNode root){
+    private static List<Integer> firstOrderTraversal(TreeNode root){
         List<Integer> result = new ArrayList<>();
-        inOrderRes(root,result);
+        opertionRecursive(root,result);
         return result;
     }
 
-    private List<Integer> inOrderRes(TreeNode root, List<Integer> result){
+    private static List<Integer> opertionRecursive(TreeNode root, List<Integer> result){
         if (root != null){
-            if (root.left != null){
-                inOrderRes(root.left,result);
-            }
             result.add(root.val);
+            if (root.left != null){
+                opertionRecursive(root.left,result);
+            }
             if (root.right != null){
-                inOrderRes(root.right,result);
+                opertionRecursive(root.right,result);
             }
         }
         return result;
     }
-
 }
