@@ -45,4 +45,30 @@ public class RemoveDuplicatesFromSortedArray {
         }
         return i+1;
     }
+
+    /**
+     * 双指针
+     * 第三版优化
+     * @param nums
+     * @return
+     */
+    public static int removeDuplicates3(int[] nums) {
+        if (nums == null || nums.length <= 0){
+            return 0;
+        }
+
+        int i = 0;
+        int j = 1;
+        while (j < nums.length){
+            if (nums[i] != nums[j]){
+                if (j - i > 1){
+                    //优化复制机制
+                    nums[ i + 1] = nums[j];
+                }
+                i++;
+            }
+            j++;
+        }
+        return i + 1;
+    }
 }
